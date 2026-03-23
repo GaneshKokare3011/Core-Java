@@ -1,4 +1,4 @@
-package com.controlFlow;
+package com.practice;
 
 public class Fibonacci {
 	public static void main(String[] args) {
