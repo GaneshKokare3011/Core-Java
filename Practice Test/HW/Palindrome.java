@@ -1,4 +1,4 @@
-package com.controlFlow;
+package com.practice;
 
 public class Palindrome {
 	public static void main(String[] args) {
