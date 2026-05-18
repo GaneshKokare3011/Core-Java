@@ -1,4 +1,4 @@
-1.CREATE DATABSE company;
+1.CREATE DATABASE company;
 
 2.USE company;
 
