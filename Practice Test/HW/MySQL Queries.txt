@@ -1,0 +1,70 @@
+1.CREATE DATABSE company;
+
+2.USE company;
+
+3.CREATE TABLE employees(INT emp_id PRIMARY KEY, first_name VARCHAR(50), last_name VARCHAR(50), age INT, gender VARCHAR(10), department VARCHAR(50), salary DECIMAL(10, 2), city VARCHAR(50), joining_date DATE, is_active BOOLEAN);
+
+
+4.INSERT INTO employees(1, 'Ganesh', 'Kokare', 21, 'Male', 'IT', 50000, 'Pune', 2026-08-15, TRUE);
+
+5.SELECT * FROM employees;
+
+6.SELECT first_name, department, salary FROM employees;
+
+7.SELECT * FROM employees WHERE city IS NOT NULL;
+
+8.SELECT * FROM employees WHERE salary > 50000;
+
+9.SELECT * FROM employees WHERE department = 'IT';
+
+10.SELECT * FROM employees WHERE department = 'IT' AND salary > 60000;
+
+11.SELECT * FROM employees WHERE department = 'HR' OR department = 'Finance';
+
+12.SELECT * FROM employees WHERE NOT department = 'Sales';
+
+13.UPDATE employees SET salary = salary + 5000 WHERE department = 'IT';
+
+14.ALTER TABLE employees ADD country VARCHAR(50);
+
+15.ALTER TABLE employees DROP COLUMN is_active; 
+
+16.DELETE FROM employees WHERE department = 'HR';
+
+17.SELECT * FROM employees ORDER BY salary ASC;
+
+18.SELECT * FROM employees LIMIT 5;
+
+19.SELECT * FROM employee LIMIT 5 OFFSET 5;
+
+20.SELECT MAX(salary) AS highest_salary, MIN(salary) AS lowest_salary, AVG(salary) AS average_salary FROM employees;
+
+21.SELECT COUNT(*) AS total_employees FROM employees;
+
+22.SELECT department, COUNT(*) AS total FROM employees GROUP BY department;
+
+23.SELECT * FROM employees WHERE first_name LIKE 'G%';
+
+24.SELECT * FROM employees WHERE first_name LIKE '%h';
+
+25.SELECT * FROM employees WHERE city IN ('Pune', 'Mumbai');
+
+26.SELECT * FROM employees WHERE age BETWEEN 25 AND 35.
+
+27.ALTER TABLE employees ADD dept_id INT, manager_id INT);
+
+28.CREATE TABLE departments(dept_id INT PRIMARY KEY, dept_name VARCHAR(50));
+
+29.SELECT employees.first_name, departments.dept_name FROM employees INNER JOIN departments ON employees.dept_id = departments.dept_id;
+
+30.SELECT employees.first_name, department.dept_name FROM employees LEFT JOIN departments ON employees.dept_id = departments.dept_id;
+
+31.SELECT employees.first_name, departments.dept_name FROM employees RIGHT JOIN departments ON employees.dept_id = departments.dept_id;
+
+32.SELECT employees.first_name, departments.dept_name FROM employees FULL OUTER JOIN departments ON employees.dept_id = departments.dept_id;
+
+33.SELECT employees.first_name, departments.dept_name FROM employees CROSS JOIN departments;
+
+34.SELECT e1.first_name AS Employee, e2.first_name AS Manager FROM employees e1 INNER JOIN employees e2 ON e1.manager_id = e2.emp_id;
+
+35.DROP TABLE employees;
